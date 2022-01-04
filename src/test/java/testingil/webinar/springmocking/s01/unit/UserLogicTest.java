@@ -27,6 +27,13 @@ public class UserLogicTest {
         assertTrue(logic.validateUser(TestConstants.GIL_ID));
     }
 
+    @Test
+    public void gil_is_ok_with_mock_too(){
+        create_mock_user_with("Gil");
+        UserLogic_withLombok logic = new UserLogic_withLombok(mockRep);
+        assertTrue(logic.validateUser(TestConstants.GIL_ID));
+    }
+
     private void create_mock_user_with(String name) {
         mockRep = mock(UserRepository.class);
         User mockUser = new User(){{setFirstName(name);}};
