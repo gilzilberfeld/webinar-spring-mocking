@@ -1,14 +1,16 @@
-package testingil.webinar.springmocking;
+package testingil.webinar.springmocking.UserLogic;
 
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import testingil.webinar.springmocking.User;
+import testingil.webinar.springmocking.UserRepository;
 
 import java.util.Optional;
 
 @Component
 @AllArgsConstructor
-public class UserLogic_withLombok {
+public class UL_Lombok {
 
     @Autowired
     UserRepository repository;

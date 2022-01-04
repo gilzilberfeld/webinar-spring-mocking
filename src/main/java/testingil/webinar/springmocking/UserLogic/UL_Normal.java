@@ -1,12 +1,14 @@
-package testingil.webinar.springmocking;
+package testingil.webinar.springmocking.UserLogic;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import testingil.webinar.springmocking.User;
+import testingil.webinar.springmocking.UserRepository;
 
 import java.util.Optional;
 
 @Component
-public class UserLogic {
+public class UL_Normal {
 
     @Autowired
     UserRepository repository;

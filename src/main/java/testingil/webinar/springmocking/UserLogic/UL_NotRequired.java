@@ -1,15 +1,17 @@
-package testingil.webinar.springmocking;
+package testingil.webinar.springmocking.UserLogic;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import testingil.webinar.springmocking.User;
+import testingil.webinar.springmocking.UserRepository;
 
 import java.util.Optional;
 
 @Component
-public class UserLogic_WithAccessibleRepository {
+public class UL_NotRequired {
 
-    @Autowired
-    public UserRepository repository;
+    @Autowired(required = false)
+    UserRepository repository;
 
     public boolean validateUser(Long id) {
         Optional<User> user = repository.findById(id);
