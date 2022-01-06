@@ -10,9 +10,6 @@ import java.util.Optional;
 @Component
 public class UL_Normal {
 
-    public UL_Normal(){
-        int x = 3;
-    }
     @Autowired
     UserRepository repository;
 
