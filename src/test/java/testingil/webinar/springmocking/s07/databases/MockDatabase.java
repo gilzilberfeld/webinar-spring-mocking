@@ -1,16 +1,28 @@
-package testingil.webinar.springmocking;
+package testingil.webinar.springmocking.s07.databases;
 
+import com.sun.jna.platform.win32.WinDef;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery;
+import testingil.webinar.springmocking.User;
+import testingil.webinar.springmocking.UserRepository;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.function.Function;
 
-public class RepositoryAdapter implements UserRepository{
+public class MockDatabase implements UserRepository {
+    Map<Long, String> map = Map.of(3L,"Gilss", 6L, "Sslig");
+
+    @Override
+    public Optional<User> findById(Long aLong) {
+        User user = new User();
+        user.setFirstName(map.get(aLong));
+        return Optional.of(user);
+    }
 
     @Override
     public List<User> findAll() {
@@ -72,10 +84,6 @@ public class RepositoryAdapter implements UserRepository{
         return null;
     }
 
-    @Override
-    public Optional<User> findById(Long aLong) {
-        return Optional.empty();
-    }
 
     @Override
     public boolean existsById(Long aLong) {
@@ -157,4 +165,3 @@ public class RepositoryAdapter implements UserRepository{
         return null;
     }
 }
-
