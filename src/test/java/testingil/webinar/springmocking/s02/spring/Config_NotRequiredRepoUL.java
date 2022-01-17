@@ -6,7 +6,7 @@ import testingil.webinar.springmocking.UserLogic.UL_NotRequired;
 import testingil.webinar.springmocking.UserLogic.UL_NotRequiredAccessibleRepository;
 
 @Configuration
-public class Config_RepoNotRequired {
+public class Config_NotRequiredRepoUL {
     @Bean
     public UL_NotRequired ul_notRequired() {
         return new UL_NotRequired();

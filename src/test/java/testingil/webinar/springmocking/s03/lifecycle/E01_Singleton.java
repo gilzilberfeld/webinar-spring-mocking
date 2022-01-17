@@ -4,24 +4,27 @@ import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import testingil.webinar.springmocking.TestHelpers;
-import testingil.webinar.springmocking.UserLogic.UL_Normal;
+import testingil.webinar.springmocking.UserLogic.UL_RequiredRepository;
 
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 
 @SpringBootTest
-@ContextConfiguration(classes ={Config_MockNormalUL.class})
+@ContextConfiguration(classes ={Config_Mock_UL_Repo.class})
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class E01_Singleton {
 
+    // Because Repo Is Required
+    // Need to supply in the Config
+    // Even if it is not used
+
     @Autowired
-    UL_Normal mockLogic;
+    UL_RequiredRepository mockLogic;
 
     @Test
     @Order(1)

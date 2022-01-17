@@ -1,4 +1,4 @@
-package testingil.webinar.springmocking.s04.api;
+package testingil.webinar.springmocking.s04.layers;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @ContextConfiguration(classes= {Config_ControllerOnly.class})
 @AutoConfigureMockMvc
-class E01_CheckControllerOnly {
+class E01_ControllerOnly_MockLogic {
 
     @Autowired
     MockMvc mockMvc;
@@ -27,7 +27,7 @@ class E01_CheckControllerOnly {
     UL_NotRequired mockLogic;
 
     @Test
-    public void validUser() throws Exception {
+    public void gil_is_ok() throws Exception {
         when(mockLogic.validateUser(anyLong()))
                 .thenReturn(true);
         mockMvc.perform(
@@ -37,7 +37,7 @@ class E01_CheckControllerOnly {
     }
 
     @Test
-    public void invalidUser() throws Exception {
+    public void gil_is_not_ok() throws Exception {
         when(mockLogic.validateUser(anyLong()))
                 .thenReturn(false);
         mockMvc.perform(

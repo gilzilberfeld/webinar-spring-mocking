@@ -13,7 +13,7 @@ import java.util.Optional;
 public class UL_Lombok {
 
     @Autowired
-    UserRepository repository;
+    private UserRepository repository;
 
     public boolean validateUser(Long id) {
         Optional<User> user = repository.findById(id);

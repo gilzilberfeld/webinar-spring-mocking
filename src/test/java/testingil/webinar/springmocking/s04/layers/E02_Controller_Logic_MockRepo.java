@@ -1,6 +1,5 @@
-package testingil.webinar.springmocking.s04.api;
+package testingil.webinar.springmocking.s04.layers;
 
-import org.checkerframework.checker.nullness.Opt;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -10,7 +9,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import testingil.webinar.springmocking.TestHelpers;
 import testingil.webinar.springmocking.User;
-import testingil.webinar.springmocking.UserLogic.UL_NotRequired;
 import testingil.webinar.springmocking.UserRepository;
 
 import java.util.Optional;
@@ -23,7 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @ContextConfiguration(classes= {Config_ControllerAndLogic.class})
 @AutoConfigureMockMvc
-class E02_CheckControllerAndLogic {
+class E02_Controller_Logic_MockRepo {
 
     @Autowired
     MockMvc mockMvc;
@@ -32,12 +30,13 @@ class E02_CheckControllerAndLogic {
     UserRepository mockRepository;
 
     @Test
-    public void validUser() throws Exception {
+    public void gil_is_ok() throws Exception {
         User user = new User();
         user.setFirstName("Gil");
         Optional<User> mockUser =Optional.of(user);
         when(mockRepository.findById(anyLong()))
                 .thenReturn(mockUser);
+
         mockMvc.perform(
                 get("/users/validate/")
                 .param("id", TestHelpers.GIL_ID.toString()))
@@ -45,7 +44,7 @@ class E02_CheckControllerAndLogic {
     }
 
     @Test
-    public void invalidUser() throws Exception {
+    public void lig_is_not_ok() throws Exception {
         User user = new User();
         user.setFirstName("Lig");
         Optional<User> mockUser =Optional.of(user);

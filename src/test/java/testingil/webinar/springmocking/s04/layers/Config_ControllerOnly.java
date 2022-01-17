@@ -1,4 +1,4 @@
-package testingil.webinar.springmocking.s04.api;
+package testingil.webinar.springmocking.s04.layers;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

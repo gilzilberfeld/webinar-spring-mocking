@@ -1,12 +1,10 @@
-package testingil.webinar.springmocking.s07.databases;
+package testingil.webinar.springmocking.s04.layers;
 
 import org.springframework.context.annotation.Bean;
-import testingil.webinar.springmocking.RepositoryAdapter;
 import testingil.webinar.springmocking.UserController;
 import testingil.webinar.springmocking.UserLogic.UL_NotRequired;
-import testingil.webinar.springmocking.UserRepository;
 
-public class Config_ControllerLogic {
+public class Config_ControllerAndLogic {
     @Bean
     public UserController userController(){
         return new UserController();

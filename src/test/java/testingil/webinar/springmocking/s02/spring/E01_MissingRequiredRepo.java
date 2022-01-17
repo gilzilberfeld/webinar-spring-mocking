@@ -5,19 +5,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import testingil.webinar.springmocking.TestHelpers;
-import testingil.webinar.springmocking.UserLogic.UL_NotRequired;
+import testingil.webinar.springmocking.UserLogic.UL_RequiredRepository;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
-@ContextConfiguration(classes ={Config_RepoNotRequired.class})
-public class E02_UserLogicTest_RepoNotRequired {
+@ContextConfiguration(classes ={Config_RequiredRepositoryUL.class})
+public class E01_MissingRequiredRepo {
 
     @Autowired
-    UL_NotRequired logic;
+    UL_RequiredRepository logic;
 
     @Test
-    public void gil_is_less_not_ok(){
+    public void gil_is_not_ok(){
         assertTrue(logic.validateUser(TestHelpers.GIL_ID));
     }
 }

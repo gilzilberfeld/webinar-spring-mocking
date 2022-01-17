@@ -1,6 +1,5 @@
-package testingil.webinar.springmocking.s07.databases;
+package testingil.webinar.springmocking.s04.layers;
 
-import com.sun.jna.platform.win32.WinDef;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,8 +13,13 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.function.Function;
 
+import static testingil.webinar.springmocking.TestHelpers.GIL_ID;
+import static testingil.webinar.springmocking.TestHelpers.NOT_GIL_ID;
+
 public class MockDatabase implements UserRepository {
-    Map<Long, String> map = Map.of(3L,"Gilss", 6L, "Sslig");
+    Map<Long, String> map = Map.of(
+            GIL_ID,"Gil",
+            NOT_GIL_ID, "Lig");
 
     @Override
     public Optional<User> findById(Long aLong) {

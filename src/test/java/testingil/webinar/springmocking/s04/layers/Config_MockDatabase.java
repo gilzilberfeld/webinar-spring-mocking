@@ -1,4 +1,4 @@
-package testingil.webinar.springmocking.s07.databases;
+package testingil.webinar.springmocking.s04.layers;
 
 import org.springframework.context.annotation.Bean;
 import testingil.webinar.springmocking.UserRepository;

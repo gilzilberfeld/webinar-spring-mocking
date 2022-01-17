@@ -13,6 +13,11 @@ import java.util.function.Function;
 public class RepositoryAdapter implements UserRepository{
 
     @Override
+    public Optional<User> findById(Long aLong) {
+        return Optional.empty();
+    }
+
+    @Override
     public List<User> findAll() {
         return null;
     }
@@ -72,10 +77,7 @@ public class RepositoryAdapter implements UserRepository{
         return null;
     }
 
-    @Override
-    public Optional<User> findById(Long aLong) {
-        return Optional.empty();
-    }
+
 
     @Override
     public boolean existsById(Long aLong) {

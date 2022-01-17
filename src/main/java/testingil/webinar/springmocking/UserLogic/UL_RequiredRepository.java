@@ -8,7 +8,7 @@ import testingil.webinar.springmocking.UserRepository;
 import java.util.Optional;
 
 @Component
-public class UL_Normal {
+public class UL_RequiredRepository {
 
     @Autowired
     UserRepository repository;
