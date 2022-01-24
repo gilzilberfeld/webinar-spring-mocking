@@ -17,5 +17,4 @@ public class E02_RequiredRepository {
         UL_RequiredRepository logic = new UL_RequiredRepository();
         assertTrue(logic.validateUser(TestHelpers.GIL_ID));
     }
-
 }

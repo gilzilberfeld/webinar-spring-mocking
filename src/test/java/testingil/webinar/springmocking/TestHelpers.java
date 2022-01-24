@@ -9,6 +9,7 @@ import static org.mockito.Mockito.when;
 public class TestHelpers {
     public static final Long GIL_ID = Long.valueOf(3);
     public static final Long NOT_GIL_ID =Long.valueOf(6);
+    public static final Long ANY_ID = Long.valueOf(10);
 
     public static UserRepository create_ֵmock_user_with(String name) {
         UserRepository mockRepo = mock(UserRepository.class);

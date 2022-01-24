@@ -10,7 +10,6 @@ public class User {
     @Column(name = "id", nullable = false)
     private Long id;
     private String firstName;
-    private String lastName;
 
     public Long getId() {
         return id;

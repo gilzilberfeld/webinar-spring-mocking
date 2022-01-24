@@ -52,7 +52,7 @@ class E02_Controller_Logic_MockRepo {
                 .thenReturn(mockUser);
         mockMvc.perform(
                         get("/users/validate/")
-                                .param("id", TestHelpers.GIL_ID.toString()))
+                                .param("id", TestHelpers.ANY_ID.toString()))
                 .andExpect(status().isNotFound());
     }
 }
