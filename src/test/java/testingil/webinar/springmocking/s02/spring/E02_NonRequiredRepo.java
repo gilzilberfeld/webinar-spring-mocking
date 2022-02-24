@@ -7,7 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import testingil.webinar.springmocking.TestHelpers;
 import testingil.webinar.springmocking.UserLogic.UL_NotRequired;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @ContextConfiguration(classes ={Config_NotRequiredRepoUL.class})
@@ -18,6 +18,6 @@ public class E02_NonRequiredRepo {
 
     @Test
     public void gil_is_still_not_ok_but_for_a_different_reason(){
-        assertTrue(logic.validateUser(TestHelpers.GIL_ID));
+        assertThat(logic.validateUser(TestHelpers.GIL_ID)).isTrue();
     }
 }

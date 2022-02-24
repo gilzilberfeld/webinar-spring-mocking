@@ -16,7 +16,6 @@ import static org.mockito.Mockito.verify;
 
 @SpringBootTest
 @ContextConfiguration(classes ={Config_Mock_UL_Repo.class})
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class E01_Singleton {
 
     // Because Repo Is Required
@@ -27,15 +26,13 @@ public class E01_Singleton {
     UL_RequiredRepository mockLogic;
 
     @Test
-    @Order(1)
-    public void one_call() {
+    public void test_one_call() {
         mockLogic.validateUser(TestHelpers.GIL_ID);
         verify(mockLogic).validateUser(anyLong());
     }
 
     @Test
-    @Order(2)
-    public void zero_calls() {
+    public void test_zero_calls() {
         verify(mockLogic, never()).validateUser(anyLong());
     }
 }

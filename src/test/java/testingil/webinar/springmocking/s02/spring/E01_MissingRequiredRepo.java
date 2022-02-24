@@ -7,7 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import testingil.webinar.springmocking.TestHelpers;
 import testingil.webinar.springmocking.UserLogic.UL_RequiredRepository;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @ContextConfiguration(classes ={Config_RequiredRepositoryUL.class})
@@ -18,6 +18,6 @@ public class E01_MissingRequiredRepo {
 
     @Test
     public void gil_is_not_ok(){
-        assertTrue(logic.validateUser(TestHelpers.GIL_ID));
+        assertThat(logic.validateUser(TestHelpers.GIL_ID)).isTrue();
     }
 }

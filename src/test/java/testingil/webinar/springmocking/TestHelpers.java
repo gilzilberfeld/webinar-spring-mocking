@@ -17,5 +17,4 @@ public class TestHelpers {
         when(mockRepo.findById(anyLong())).thenReturn(Optional.of(mockUser));
         return mockRepo;
     }
-
 }

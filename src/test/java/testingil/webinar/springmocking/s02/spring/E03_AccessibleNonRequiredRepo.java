@@ -8,7 +8,7 @@ import testingil.webinar.springmocking.TestHelpers;
 import testingil.webinar.springmocking.UserLogic.UL_NotRequiredAccessibleRepository;
 import testingil.webinar.springmocking.UserRepository;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @ContextConfiguration(classes ={Config_NotRequiredRepoUL.class})
@@ -21,6 +21,6 @@ public class E03_AccessibleNonRequiredRepo {
     public void gil_is_ok_again(){
         UserRepository mockRep = TestHelpers.create_ֵmock_user_with("Gil");
         logic.repository = mockRep;
-        assertTrue(logic.validateUser(TestHelpers.GIL_ID));
+        assertThat(logic.validateUser(TestHelpers.GIL_ID)).isTrue();
     }
 }
